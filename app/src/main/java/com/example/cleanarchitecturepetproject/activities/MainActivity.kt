@@ -2,6 +2,7 @@ package com.example.cleanarchitecturepetproject.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.findNavController
 import com.example.cleanarchitecturepetproject.R
 
 class MainActivity : AppCompatActivity() {
@@ -18,4 +19,14 @@ class MainActivity : AppCompatActivity() {
          *
          */
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return findNavController(/*this@MainActivity,*/R.id.navHostMain).navigateUp()
+    }
+
+//    private fun setupNavigation() {
+//        val navController = findNavController(R.id.navHostMain)
+//    }
+
+
 }

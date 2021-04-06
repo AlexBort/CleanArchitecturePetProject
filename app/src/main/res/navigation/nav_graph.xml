@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/heroListFragment_">
+
+    <fragment
+        android:id="@+id/heroListFragment_"
+        android:name="com.example.cleanarchitecturepetproject.fragments.HeroListFragment_"
+        android:label="fragment_hero_list_"
+        tools:layout="@layout/fragment_hero_list_" />
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="com.example.cleanarchitecturepetproject.activities.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+</navigation>
