@@ -4,5 +4,5 @@ data class Hero(
     val id: Int,
     val name: String,
     val title: String,
-    val icon: String/*val localized_name: String*/
+    val icon: String, val attackType: Int/*val localized_name: String*/
 )

@@ -3,6 +3,8 @@ package com.example.cleanarchitecturepetproject.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cleanarchitecturepetproject.R
 import com.example.cleanarchitecturepetproject.models.Hero
@@ -28,8 +30,13 @@ class HeroAdapter : RecyclerView.Adapter<HeroAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) { // it's showed one view-element
 
-        fun bind(hero: Hero) {
+        private val txtTitle: TextView = itemView.findViewById(R.id.txtTitle)
+        private val txtAttackType: TextView = itemView.findViewById(R.id.txtAttackType)
+        private val imgAvatar: ImageView = itemView.findViewById(R.id.imgAvatar)
 
+
+        fun bind(hero: Hero) {
+            txtTitle.text = hero.title
         }
 
     }
