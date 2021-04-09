@@ -17,13 +17,8 @@ navigation component code lab
 https://developer.android.com/codelabs/basic-android-kotlin-training-fragments-navigation-component?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fandroid-basics-kotlin-unit-3-pathway-2%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-training-fragments-navigation-component#0
 
 
+THREE MAIN PARTS OF NAVIGATION COMPONENT:
+    Navigation Graph: The navigation graph is an XML file that provides a visual representation of navigation in your app. The file consists of destinations which correspond to individual activities and fragments as well as actions between them which can be used in code to navigate from one destination to another. Just like with layout files, Android Studio provides a visual editor to add destinations and actions to the navigation graph.
+    NavHost: A NavHost is used to display destinations form a navigation graph within an activity. When you navigate between fragments, the destination shown in the NavHost is updated. You'll use a built-in implementation, called NavHostFragment, in your MainActivity.
+    NavController: The NavController object lets you control the navigation between destinations displayed in the NavHost. When working with intents, you had to call startActivity to navigate to a new screen. With the Navigation component, you can call the NavController's navigate() method to swap the fragment that's displayed. The NavController also helps you handle common tasks like responding to the system "up" button to navigate back to the previously displayed fragment.
 
-For me:
-That's it for migrating MainActivity to LettersListFragment. Migrating the DetailActivity is almost identical. Perform the following steps to migrate the code to WordListFragment.
-    Copy the companion object from DetailActivity to WordListFragment. Make sure the reference to SEARCH_PREFIX in WordAdapter is updated to reference WordListFragment.
-    Add a _binding variable The variable should be nullable and have null as its initial value.
-    Add a get-only variable called binding equal to the _binding variable.
-    Inflate the layout in onCreateView(), setting the value of _binding and returning the root view.
-    Perform any remaining setup in onViewCreated(): get a reference to the recycler view, set its layout manager and adapter, and add its item decoration. You'll need to get the letter from the intent. As fragments don't have an intent property and shouldn't normally access the intent of the parent activity. For now, you refer to activity.intent (rather than intent in DetailActivity) to get the extras.
-    Reset _binding to null in onDestroyView.
-    Delete the remaining code from DetailActivity, leaving only the onCreate() method.
