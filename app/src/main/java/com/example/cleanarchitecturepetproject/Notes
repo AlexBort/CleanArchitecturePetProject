@@ -1,0 +1,29 @@
+
+Before Navigation Components; earlier we have:
+— intents and fragment transactions
+
+In Navigation Components:
+
+navigation component benefits:
+- simplified setup for common navigation patterns
+- handles backstack
+- automates fragment transactions
+- type safe argument passing
+- handle transition animations
+- simplified deep linking
+- visualizes navigation
+
+navigation component code lab
+https://developer.android.com/codelabs/basic-android-kotlin-training-fragments-navigation-component?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fandroid-basics-kotlin-unit-3-pathway-2%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-training-fragments-navigation-component#0
+
+
+
+For me:
+That's it for migrating MainActivity to LettersListFragment. Migrating the DetailActivity is almost identical. Perform the following steps to migrate the code to WordListFragment.
+    Copy the companion object from DetailActivity to WordListFragment. Make sure the reference to SEARCH_PREFIX in WordAdapter is updated to reference WordListFragment.
+    Add a _binding variable The variable should be nullable and have null as its initial value.
+    Add a get-only variable called binding equal to the _binding variable.
+    Inflate the layout in onCreateView(), setting the value of _binding and returning the root view.
+    Perform any remaining setup in onViewCreated(): get a reference to the recycler view, set its layout manager and adapter, and add its item decoration. You'll need to get the letter from the intent. As fragments don't have an intent property and shouldn't normally access the intent of the parent activity. For now, you refer to activity.intent (rather than intent in DetailActivity) to get the extras.
+    Reset _binding to null in onDestroyView.
+    Delete the remaining code from DetailActivity, leaving only the onCreate() method.
