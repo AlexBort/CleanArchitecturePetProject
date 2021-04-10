@@ -22,3 +22,4 @@ THREE MAIN PARTS OF NAVIGATION COMPONENT:
     NavHost: A NavHost is used to display destinations form a navigation graph within an activity. When you navigate between fragments, the destination shown in the NavHost is updated. You'll use a built-in implementation, called NavHostFragment, in your MainActivity.
     NavController: The NavController object lets you control the navigation between destinations displayed in the NavHost. When working with intents, you had to call startActivity to navigate to a new screen. With the Navigation component, you can call the NavController's navigate() method to swap the fragment that's displayed. The NavController also helps you handle common tasks like responding to the system "up" button to navigate back to the previously displayed fragment.
 
+Make launcher fragment: click on fragment (inside nav_graph.xml) and select home for it
